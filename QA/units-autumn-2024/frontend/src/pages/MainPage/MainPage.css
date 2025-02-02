@@ -1,0 +1,22 @@
+.main-page {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-page__title {
+    padding: 20px 10px;
+}
+
+.main-page__parameters {
+    max-width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10vw;
+}
