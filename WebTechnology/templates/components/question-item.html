@@ -1,0 +1,39 @@
+{% load static %}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ question.title }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle" src="{% static 'images/ava.png' %}"
+                                                       width="45" height="45"/> {{ question.author.user.username }}</h6>
+        <p class="card-text">
+            {{ question.context }}
+        </p>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary position-relative">
+                    <a href="{% url 'question' number=question.id %}" class="card-link"
+                       style="color: white">Ответы</a>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ question.answers.all.count }}
+                                
+                                <span class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <p class="card-text">Теги:{% for tag in question.tags.all %} 
+                    <a href="{% url 'tag' tagname=tag.tag_name %}" class="card-link">
+                        {{ tag.tag_name }} 
+                    </a>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-md-2">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Лайк ({{ question.likesquestion.all.count }})</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2></h2>

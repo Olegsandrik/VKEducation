@@ -1,0 +1,126 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block registr %}
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="button" class="btn btn-outline-primary">
+                <a class="nav-link" href="{% url 'singup' %}">Зарегистрироваться</a>
+            </button>
+            <h1></h1>
+            <button type="button" class="btn btn-outline-primary">
+                <a class="nav-link" href="{% url 'login' %}">Войти</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+{% block mainrow %}
+    <h1 style="color: #000000"> {% block mainrowtitle %} Актуальные вопросы {% endblock %}</h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Я запрещаю вам делать паблики ВК</h4>
+            <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle" src="{% static 'images/ava.png' %}"
+                                                       width="45" height="45"/> Jason Statham</h6>
+            <p class="card-text">
+                Еще раз увижу паблики в ВК, которые "ведуться от моего лица", - приеду в РФ и буду общаться
+                лично!
+                Сслыки кидайте в ответы
+            </p>
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary position-relative">
+                        <a href="{% url 'question' number=0 %}" class="card-link" style="color: white">Ответы</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">999+<span
+                                class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                    </button>
+                </div>
+                <div class="col-md-8">
+                    <p class="card-text">Теги: <a href="{% url 'tag' tagname='СамыйКрутой' %}" class="card-link">СамыйКрутой</a><a
+                            href="{% url 'tag' tagname='Отец' %}"
+                            class="card-link">Отец</a>
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Лайк</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1></h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Зенит-Казань VS Динамо Москва</h4>
+            <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle" src="{% static 'images/ava.png' %}"
+                                                       width="45" height="45"/> Д. А. Волков</h6>
+            <p class="card-text">
+                Как вы думаете, зачем Питер купил победу Москвы в нашем матче???
+            </p>
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary position-relative">
+                        <a href="{% url 'question' number=0 %}" class="card-link" style="color: white">Ответы</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">7<span
+                                class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                    </button>
+                </div>
+                <div class="col-md-8">
+                    <p class="card-text">Теги: <a href="{% url 'tag' tagname='Кубокстолетия' %}" class="card-link">Кубок100летия</a><a
+                            href="{% url 'tag' tagname='ДеньгиРешают' %}"
+                            class="card-link">ДеньгиРешают</a>
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <div class="custom-control custom-checkbox">
+                        <label for="customCheck2">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                        </label>
+                        <label class="custom-control-label" for="customCheck1">Лайк</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1></h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Цели РФ на ближайшие 10 лет</h4>
+            <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle" src="{% static 'images/ava.png' %}"
+                                                       width="45" height="45"/> В.В. Путин</h6>
+            <p class="card-text">
+                На данный момент не понятно куда двигаться будем, товарищи. Скидывайте свои предложения!))
+            </p>
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary position-relative">
+                        <a href="{% url 'question' number=0 %}" class="card-link" style="color: white">Ответы</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9<span
+                                class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                    </button>
+                </div>
+                <div class="col-md-8">
+                    <p class="card-text">Теги: <a href="{% url 'tag' tagname='Выборы2024' %}" class="card-link">Выборы2024</a><a
+                            href="{% url 'tag' tagname='РоссияБудущего' %}"
+                            class="card-link">РоссияБудущего</a>
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <div class="custom-control custom-checkbox">
+                        <label for="customCheck3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        </label>
+                        <label class="custom-control-label" for="customCheck1">Лайк</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2></h2>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block registr %}
+    {% for ans in register %}
+        {% include 'components/register.html' %}
+    {% endfor %}
+{% endblock %}
+{% block navigation %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Main</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'ask' %}">Ask</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'hot' %}">Hot</a>
+    </li>
+{% endblock %}
+{% block mainrow %}
+    <div class="card">
+        <div class="card-body"><h1>Настройки пользователя</h1></div>
+    </div>
+    <h1></h1>
+    <div class="card">
+        <div class="card-body">
+            <div>Примечание: Если хотите оставить поле неизменным, то введите актуальные данные аккаунта</div>
+            <h1></h1>
+            <form method="post" class="needs-validation">
+                {% csrf_token %}
+                <div class="col-md-4 mb-3">
+                    {% bootstrap_form form %}
+                </div>
+                <button class="btn btn-primary" type="submit">Поменять!</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block pagenavigation %}{% endblock %}

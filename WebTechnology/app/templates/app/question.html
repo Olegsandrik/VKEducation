@@ -1,0 +1,111 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block registr %}
+    {% for ans in register %}
+        {% include 'components/register.html' %}
+    {% endfor %}
+    {% for ans in notregister %}
+        {% include 'components/notregister.html' %}
+    {% endfor %}
+{% endblock %}
+{% block navigation %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Main</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'ask' %}">Ask</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'hot' %}">Hot</a>
+    </li>
+{% endblock %}
+{% block mainrow %}
+    <div class="card">
+        <h2 style="padding: 15px;"> Вопрос номер {{ question.id }} </h2>
+    </div>
+    <h1></h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ question.title }}</h4>
+            <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle" src="{% static 'images/ava.png' %}"
+                                                           width="45" height="45"/> {{ question.author.user.username }}
+            </h6>
+            <p class="card-text">
+                {{ question.context }}
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="card-text">Теги:{% for tag in question.tags.all %}
+                        <a href="{% url 'tag' tagname=tag.tag_name %}" class="card-link">
+                            {{ tag.tag_name }}
+                        </a>
+                    {% endfor %}
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Лайк
+                            ({{ question.likesquestion.all.count }})</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2></h2>
+
+    <h4 class="card-title">Ответы</h4>
+    <h1></h1>
+    {% for ans in question.answers.sort_by_likes.all %}
+        <div class="card">
+            <div class="card-body">
+
+                <h6 class="card-subtitle mb-2 text-muted"><img class="rounded-circle"
+                                                               src="{% static 'images/ava.png' %}"
+                                                               width="45"
+                                                               height="45"/> {{ ans.author.user.username }}
+                </h6>
+
+                <p class="card-text">
+                    {{ ans.context }}
+                </p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label" for="customCheck3">Лайк ({{ ans.likesanswer.all.count }})</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1></h1>
+    {% endfor %}
+
+
+
+    <!-- {% include 'components/pagination-item.html' %} -->
+
+
+    <h2></h2>
+    <div class="card">
+        <div class="card-body">
+            <h1>Ваш ответ на вопрос</h1>
+            <form>
+                <form method="POST" class="needs-validation">
+                    {% csrf_token %}
+                    <div class="col-md-12 mb-3">
+                        {% bootstrap_form form %}
+                    </div>
+                    <button class="btn btn-primary" type="submit">Ответить!</button>
+                </form>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block pagenavigation %}{% endblock %}

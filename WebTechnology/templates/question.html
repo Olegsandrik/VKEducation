@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="../static/js/bootstrap.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <style>
+        #footer {
+            margin-top: 100px;
+            height: 100px;
+        }
+        #header {
+         padding: 30px;
+        }
+        input {
+         padding: 10px 0;
+       }
+       input::placeholder {
+         padding: 5px;
+         font-size: 1em;
+         font-style: italic;
+       }
+    </style>
+<body>
+<div class="container-md">
+    <h2></h2>
+    <div id="header">
+        <div class="row">
+            <div class="col-md-4" style="color: #FFFFFF">
+                <h1 style="color: #000000"> NikotinMessage
+                    <button type="button" class="btn btn-primary">Primary</button>
+                </h1>
+            </div>
+            <div class="col-md-3" style="background-color: #FFFFFF">
+                <nav class="navbar navbar-light bg-white">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Введите запрос">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                style="color: white; background-color: #007BFF; border-color: #007BFF;">Поиск
+                        </button>
+                    </form>
+                </nav>
+            </div>
+            <div class="col-md-2" style="background-color: #FFFFFF">
+                <h2></h2>
+                <button type="button" style="padding: 12px 20px;" class="btn btn-primary">ЗАДАТЬ ВОПРОС!!!</button>
+            </div>
+            <div class="col-md-3" style="background-color: #FFFFFF">
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <img class="rounded-circle" src="../static/images/ava.png" width="65" height="65"/>
+                        <a class="nav-link" href="#">Nikitin Alexandr(admin)</a>
+                        <button type="button" class="btn btn-outline-primary">Настройки</button>
+                        <button type="button" class="btn btn-outline-primary">Выйти</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Massages</a>
+                </li>
+            </ul>
+            <h2></h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Зенит-Казань VS Динамо Москва</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Д. А. Волков</h6>
+                    <p class="card-text">
+                        Как вы думаете, зачем Питер купил победу Москвы в нашем матче???
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="card-text">Теги: <a href="#" class="card-link">Кубок100летия</a><a href="#"
+                                                                                                         class="card-link">ДеньгиРешают</a>
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Лайк</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ответ</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">А. В. Коновалов</h6>
+                    <p class="card-text">
+                        Да чтобы хоть как-то разнообразить гигимонию Казани!!!
+                    </p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                <label class="custom-control-label" for="customCheck3">Лайк</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-control custom-checkbox">
+                                <button type="button" class="btn btn-primary position-relative"
+                                        style="background-color: #0d6efd;; color: blue">
+                                    <a href="#" class="card-link" style="color: white">Правильный ответ!</a>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9<span
+                                            class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ответ</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">А. В. Коновалов</h6>
+                    <p class="card-text">
+                        Да чтобы хоть как-то разнообразить гигимонию Казани!!!
+                    </p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                <label class="custom-control-label" for="customCheck5">Лайк</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-control custom-checkbox">
+                                <button type="button" class="btn btn-primary position-relative"
+                                        style="background-color: #0d6efd;; color: blue">
+                                    <a href="#" class="card-link" style="color: white">Правильный ответ!</a>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3<span
+                                            class="visually-hidden">непрочитанные сообщения</span>
+                  </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2></h2>
+            <form>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="formExample">Ваш ответ</label>
+                    <textarea class="form-control" style="height: 100px;" id="formExample" rows="4"></textarea>
+                </div>
+                <button type="button" style="padding: 12px 20px;" class="btn btn-primary">Ответить!!!</button>
+            </form>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>Теги
+                                <button type="submit" class="btn btn-primary">INFO</button>
+                            </h1>
+                            <p class="font-italic">
+                                <a class="nav-link" style="color: #FFCC19" href="#">SQL</a>
+                                <a class="nav-link" style="color: #AACC70" href="#">Python</a>
+                                <a class="nav-link" style="color: #DC143C" href="#">CSS</a>
+                                <a class="nav-link" style="color: #32CD32" href="#">JS</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h1>Люди
+                                <button type="submit" class="btn btn-primary">VIP</button>
+                            </h1>
+                            <a class="nav-link" href="#">Alexandr Konovalov</a>
+                            <a class="nav-link" href="#">Vladimir Putin</a>
+                            <a class="nav-link" href="#">Olga Byzova</a>
+                            <a class="nav-link" href="#">Dmity Volkov</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="row md-4">
+            <div class="text-center text-white" style="background-color: #0d6efd;">
+                <div class="text-center p-3" style="background-color: #0d6efd">
+                    © 2023 Copyright:
+                    <a class="text-white" href="#">Nikotincorp.com</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
